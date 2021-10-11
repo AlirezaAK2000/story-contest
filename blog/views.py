@@ -11,9 +11,6 @@ from django.views.generic import (
       DeleteView
 )
 
-# def home(request):
-#     context = {'posts': Post.objects.all()}
-#     return render(request , 'home.html' , context)
 
 def about(request):
     return render(request , 'about.html' , {'title': 'about'})
@@ -30,7 +27,6 @@ class PostListView(ListView):
 class UserPostListView(ListView):
     model = Post
     template_name = 'user_posts.html'
-    # <app>/<model>_<viewtype>.html
     context_object_name = 'posts'
     paginate_by = 5
 
