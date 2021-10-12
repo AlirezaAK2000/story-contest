@@ -8,7 +8,8 @@ from .views import (
     PostCreateView , 
     PostUpdateView ,
     PostDeleteView ,
-    UserPostListView
+    UserPostListView,
+    CommentCreateView
     ) 
 
 urlpatterns = [
@@ -19,6 +20,7 @@ urlpatterns = [
     re_path(r'^post/(?P<pk>\d{1,})/update/$' , PostUpdateView.as_view() , name='post-update'),
     re_path(r'^post/(?P<pk>\d{1,})/delete/$' , PostDeleteView.as_view() , name='post-delete'),
     re_path(r'^user/(?P<username>.*)/$' , UserPostListView.as_view() , name='user-posts'),
+    re_path(r'^comment/new/(?P<postPk>\d{1,})/$' , CommentCreateView.as_view() , name='comment-create')
 ]
 
 if settings.DEBUG:

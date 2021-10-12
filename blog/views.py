@@ -2,7 +2,7 @@ from django.shortcuts import render , get_object_or_404
 from django.contrib.auth.models import User
 from django.contrib.auth.mixins import LoginRequiredMixin , UserPassesTestMixin
 from django.http import HttpResponse
-from .models import Post
+from .models import Comment, Post
 from django.views.generic import (
      ListView ,
       DetailView , 
@@ -47,6 +47,24 @@ class PostCreateView(LoginRequiredMixin,CreateView):
     def form_valid(self , form):
         form.instance.author = self.request.user
         return super().form_valid(form)
+    
+class CommentCreateView(LoginRequiredMixin,CreateView):
+    model = Comment
+    template_name = "comment_form.html"
+    fields = ['content']
+    
+    
+    def form_valid(self, form):
+        form.instance.author = self.request.user
+        form.instance.post = self.post
+        return super().form_valid(form)
+
+    
+    def post(self, request, postPk ,*args, **kwargs):
+        self.post = Post.objects.get(pk=postPk)
+        return super().post(request, *args, **kwargs)
+        
+            
 
 
 class PostUpdateView(LoginRequiredMixin,UserPassesTestMixin,UpdateView):
