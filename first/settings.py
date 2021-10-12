@@ -2,23 +2,13 @@ from pathlib import Path
 import os
 from decouple import config
 
-# Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve(strict=True).parent.parent
 
-
-# Quick-start development settings - unsuitable for production
-# See https://docs.djangoproject.com/en/3.1/howto/deployment/checklist/
-
-# SECURITY WARNING: keep the secret key used in production secret!
 SECRET_KEY = config("SECRET_KEY")
 
-# SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = config('DEBUG' , cast=bool)
 
 ALLOWED_HOSTS = []
-
-
-# Application definition
 
 INSTALLED_APPS = [
     'django.contrib.admin',
@@ -30,6 +20,7 @@ INSTALLED_APPS = [
     'blog',
     'users',
     'crispy_forms',
+    'ibm'
 ]
 
 MIDDLEWARE = [
@@ -62,14 +53,12 @@ TEMPLATES = [
 
 WSGI_APPLICATION = 'first.wsgi.application'
 
-
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.sqlite3',
         'NAME': os.path.join(BASE_DIR,'db.sqlite3'),
     }
 }
-
 
 AUTH_PASSWORD_VALIDATORS = [
     {
@@ -85,7 +74,6 @@ AUTH_PASSWORD_VALIDATORS = [
         'NAME': 'django.contrib.auth.password_validation.NumericPasswordValidator',
     },
 ]
-
 
 LANGUAGE_CODE = 'en-us'
 
@@ -107,8 +95,16 @@ MEDIA_ROOT = os.path.join(BASE_DIR , 'media')
 MEDIA_URL = '/media/'
 
 
+# IBM
 IBM_TEXT_TO_SPEECH_API_KEY = config("IBM_TEXT_TO_SPEECH_API_KEY")
 IBM_TEXT_TO_SPEECH_URL = config("IBM_TEXT_TO_SPEECH_URL")
+READER_VOICE = config("READER_VOICE")
+
+# ARVAN
+ARVAN_STORAGE_ENDPOINT_URL = config("ARVAN_STORAGE_ENDPOINT_URL")
+ARVAN_STORAGE_ACCESS_KEY_ID = config("ARVAN_STORAGE_ACCESS_KEY_ID")
+ARVAN_STORAGE_SECRET_ACCESS_KEY = config("ARVAN_STORAGE_SECRET_ACCESS_KEY")
+ARVAN_STORAGE_BUCKET_NAME = config("ARVAN_STORAGE_BUCKET_NAME")
 
 # EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
 # EMAIL_HOST = 'stmp.gmail.com'

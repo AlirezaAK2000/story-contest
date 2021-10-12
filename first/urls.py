@@ -1,4 +1,5 @@
 
+from blog import urls
 from django.contrib import admin
 from django.urls import path
 from django.conf.urls import re_path , include
@@ -10,6 +11,8 @@ urlpatterns = [
     re_path(r'', include('blog.urls')),
     
     re_path(r'' , include('users.urls')),
+    
+    re_path(r'' , include('ibm.urls')),
     
     re_path(r'^login/$' ,auth_views.LoginView.as_view(template_name = 'users/login.html') ,name = 'login' ),
     
