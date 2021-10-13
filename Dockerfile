@@ -20,3 +20,13 @@ RUN pip install -r requirements.txt
 
 # now copy project to app
 COPY . /app
+
+RUN mkdir -p /vol/web/static
+
+ENV PATH="/scripts:${PATH}"
+
+COPY ./scripts /scripts
+
+RUN chmod +x /scripts/*
+
+CMD ["entrypoint.sh"]
