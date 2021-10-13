@@ -16,7 +16,9 @@
         <h2 class="article-title">{{ object.title }}</h2>
         <br>
         <br>
-        <img src="{{ post.author.profile.image.url }}" class="img-fluid" alt="Responsive image">
+            {% if object.image %}
+                <img src="{{ object.image.url }}" class="img-fluid" alt="Responsive image">
+            {% endif %}
         <br>
         <br>
         <p class="article-content">{{ object.content }}</p>

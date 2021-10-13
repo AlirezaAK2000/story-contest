@@ -13,6 +13,7 @@ class Post(models.Model):
     date_posted = models.DateTimeField(default=timezone.now)
     author = models.ForeignKey(User , on_delete=models.CASCADE)
     audio_path = models.URLField(blank=True , null=True)
+    image = models.ImageField(null=True , default=None , upload_to = 'post_pics')
 
     def __str__(self):
         return self.title

@@ -20,7 +20,8 @@ INSTALLED_APPS = [
     'blog',
     'users',
     'crispy_forms',
-    'ibm'
+    'ibm',
+    'storages'
 ]
 
 MIDDLEWARE = [
@@ -52,6 +53,7 @@ TEMPLATES = [
 ]
 
 WSGI_APPLICATION = 'first.wsgi.application'
+
 
 DATABASES = {
     'default': {
@@ -109,7 +111,12 @@ ARVAN_STORAGE_ENDPOINT_URL = config("ARVAN_STORAGE_ENDPOINT_URL")
 ARVAN_STORAGE_ACCESS_KEY_ID = config("ARVAN_STORAGE_ACCESS_KEY_ID")
 ARVAN_STORAGE_SECRET_ACCESS_KEY = config("ARVAN_STORAGE_SECRET_ACCESS_KEY")
 ARVAN_STORAGE_BUCKET_NAME = config("ARVAN_STORAGE_BUCKET_NAME")
-
+DEFAULT_FILE_STORAGE = 'storages.backends.s3boto3.S3Boto3Storage'
+AWS_S3_ACCESS_KEY_ID = config("ARVAN_STORAGE_ACCESS_KEY_ID")
+AWS_S3_SECRET_ACCESS_KEY = config("ARVAN_STORAGE_SECRET_ACCESS_KEY")
+AWS_STORAGE_BUCKET_NAME = config("ARVAN_STORAGE_BUCKET_NAME")
+AWS_S3_ENDPOINT_URL = config("ARVAN_STORAGE_ENDPOINT_URL")
+AWS_DEFAULT_ACL = 'public-read'
 # EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
 # EMAIL_HOST = 'stmp.gmail.com'
 # EMAIL_PORT = 587

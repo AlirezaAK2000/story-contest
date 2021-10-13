@@ -18,7 +18,6 @@ def about(request):
 class PostListView(ListView):
     model = Post
     template_name = 'home.html'
-    # <app>/<model>_<viewtype>.html
     context_object_name = 'posts'
     order = ['-date_posted']
     paginate_by = 5
@@ -42,7 +41,7 @@ class PostDetailView(DetailView):
 class PostCreateView(LoginRequiredMixin,CreateView):
     model = Post
     template_name = 'post_form.html'
-    fields = ['title' , 'content']
+    fields = ['title' , 'content' , 'image']
 
     def form_valid(self , form):
         form.instance.author = self.request.user
@@ -70,7 +69,7 @@ class CommentCreateView(LoginRequiredMixin,CreateView):
 class PostUpdateView(LoginRequiredMixin,UserPassesTestMixin,UpdateView):
     model = Post
     template_name = 'post_form.html'
-    fields = ['title' , 'content']
+    fields = ['title' , 'content' , 'image']
 
     def form_valid(self , form):
         form.instance.author = self.request.user

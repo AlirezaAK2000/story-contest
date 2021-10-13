@@ -18,14 +18,16 @@ def convert_text_to_speech(text , pk , title):
 
     object_name = f"{title}_{pk}.wav"
     
+    return upload_to_arvan(audio , object_name)
     
+        
+def upload_to_arvan(body , object_name):
+
     bucket.put_object(
         ACL = 'public-read',
-        Body = audio,
+        Body = body,
         Key = object_name
     )
-    
-    
     
     generated_url = s3_client.generate_presigned_url(
         'get_object',
@@ -36,6 +38,4 @@ def convert_text_to_speech(text , pk , title):
     )
     
     return generated_url
-        
-    
             
