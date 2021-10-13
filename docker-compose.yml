@@ -10,4 +10,12 @@ services:
       - '8000:8000'
     environment:
       - DJANGO_ALLOWED_HOSTS=localhost 127.0.0.1 [::1]
-
+  db:
+    image: "postgres"
+    environment:
+      - POSTGRES_USER=${POSTGRES_USER}
+      - POSTGRES_PASSWORD=${POSTGRES_PASSWORD}
+    volumes:
+      - /opt/data/post/:/var/lib/postgresql/data/
+    ports:
+      - '5432:5432'

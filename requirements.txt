@@ -13,3 +13,4 @@ django-storages
 django-cors-headers
 gunicorn
 whitenoise
+psycopg2
