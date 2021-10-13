@@ -8,7 +8,7 @@ SECRET_KEY = config("SECRET_KEY")
 
 DEBUG = config('DEBUG' , cast=bool)
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['0.0.0.0' ]
 
 INSTALLED_APPS = [
     'django.contrib.admin',
@@ -21,12 +21,14 @@ INSTALLED_APPS = [
     'users',
     'crispy_forms',
     'ibm',
-    'storages'
+    'storages',
+    "corsheaders",
 ]
 
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
+    "corsheaders.middleware.CorsMiddleware",
     'django.middleware.common.CommonMiddleware',
     'django.middleware.csrf.CsrfViewMiddleware',
     'django.contrib.auth.middleware.AuthenticationMiddleware',
