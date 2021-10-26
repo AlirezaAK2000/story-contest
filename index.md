@@ -1,37 +1,55 @@
-## Welcome to GitHub Pages
 
-You can use the [editor on GitHub](https://github.com/AlirezaAK2000/story-contest/edit/gh-pages/index.md) to maintain and preview the content for your website in Markdown files.
+# Story Contest
 
-Whenever you commit to this repository, GitHub Pages will run [Jekyll](https://jekyllrb.com/) to rebuild the pages in your site, from the content in your Markdown files.
 
-### Markdown
+Simple web site for sharing your short stories and beautiful pictures.(Cloud computing first assignment)
 
-Markdown is a lightweight and easy-to-use syntax for styling your writing. It includes conventions for
+## Clouds
 
-```markdown
-Syntax highlighted code block
+The table below shows clouds and their services which we've used for this project.
 
-# Header 1
-## Header 2
-### Header 3
+| Cloud      | Service |
+| ----------- | ----------- |
+| [Arvan](https://www.arvancloud.com/fa)   | Storage   |
+| [IBM](https://cloud.ibm.com/)   | [TextToSpeech](https://cloud.ibm.com/apidocs/text-to-speech)   |
+| [IBM](https://cloud.ibm.com/)   | [Natural Language Understanding]( https://cloud.ibm.com/apidocs/naturallanguage-understanding)   |
+| [Fandogh](https://www.fandogh.cloud/)   |  PostgreSQL  |
+| [Fandogh](https://www.fandogh.cloud/)   |  Deployment  |
 
-- Bulleted
-- List
 
-1. Numbered
-2. List
 
-**Bold** and _Italic_ and `Code` text
+## Built With
 
-[Link](url) and ![Image](src)
-```
 
-For more details see [GitHub Flavored Markdown](https://guides.github.com/features/mastering-markdown/).
+* [Django](https://www.djangoproject.com/)
+* [Docker](https://www.docker.com/)
+* [Bootstrap](https://getbootstrap.com)
+* [JQuery](https://jquery.com)
 
-### Jekyll Themes
 
-Your Pages site will use the layout and styles from the Jekyll theme you have selected in your [repository settings](https://github.com/AlirezaAK2000/story-contest/settings/pages). The name of this theme is saved in the Jekyll `_config.yml` configuration file.
+## Installation
 
-### Support or Contact
+1. Clone the repository
+2. Cteate a .env file to initialize secret variables. Here is a sample of [.env](https://github.com/AlirezaAK2000/story-contest/blob/master/.env.test).
+3. To run the project on your local system execute the command below.
+```sh
+   sudo docker-compose up --build
+   ```
+## Usage
 
-Having trouble with Pages? Check out our [documentation](https://docs.github.com/categories/github-pages-basics/) or [contact support](https://support.github.com/contact) and we’ll help you sort it out.
+[Here](story-contest-alirezaak.fandogh.cloud/) is the result of deployment on Fandogh. You are welcome to take a look of it :))).
+
+
+
+## License
+
+Distributed under the MIT License. See `LICENSE` for more information.
+
+
+
+## Contact
+
+My email: a.akhoudi79@gmail.com
+
+
+
