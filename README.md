@@ -37,7 +37,7 @@ The table below shows clouds and their services which we've used for this projec
    ```
 ## Usage
 
-[Here](story-contest-alirezaak.fandogh.cloud/) is the result of deployment on Fandogh. You are welcome to take a look of it :))).
+[Here](https:story-contest-alirezaak.fandogh.cloud/) is the result of deployment on Fandogh. You are welcome to take a look of it :))).
 
 
 
